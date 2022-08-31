@@ -22,13 +22,22 @@ namespace Lib {
 		file.close();
 	}
 
+	void ReadFromFile()
+	{
+		std::string fileContent;
+		std::ifstream openFile("minfil.txt");
+		while (std::getline(openFile, fileContent))
+		{
+			std::cout << "Står i fil: " << fileContent << "\n";
+		}
+		openFile.close();
+	}
 }
-
-
 
 
 int main()
 {
 	Lib::Print("hej");
 	Lib::WriteToFile("minfil.txt");
+	Lib::ReadFromFile();
 }
